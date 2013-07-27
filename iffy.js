@@ -1,9 +1,9 @@
 (function(exports) {
 
   var iffy = exports;
-  iffy.version = "0.0.1";
+  iffy.version = "0.0.2";
 
-  iffy.fn = function(fn, context) {
+  iffy.fn = function(fn) {
     if (typeof fn === "function") return fn;
     var match = String(fn).trim().match(/^((f|fn|function)\(([^\)]+)\))?\s*(return\s)?(.+)$/);
     if (match) {
