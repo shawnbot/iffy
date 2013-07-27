@@ -1,0 +1,26 @@
+{
+  "name": "iffy",
+  "preferGlobal": true,
+  "version": "0.0.1",
+  "author": "Shawn Allen <shawn@stamen.com>",
+  "description": "Shorthand function generators for JavaScript",
+  "contributors": [
+  ],
+  "tags": "function shorthand parser",
+  "bin": {
+  },
+  "main": "./status",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shawnbot/dsv-stream"
+  },
+  "dependencies": {
+    "event-stream": "*",
+    "optimist":     "*",
+    "d3":           ">=3.1"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.5"
+  }
+}
