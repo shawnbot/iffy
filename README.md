@@ -4,17 +4,17 @@ Iffy is a shorthand function generator for JavaScript. It's useful for defining 
 ## Usage
 Iffy generates usable functions from more readable, shorthand strings, like:
 
-```
+```js
 // return a single property of an object
-iffy.fn("foo")
+iffy.fn("foo") // returns
 function(d) { return d.foo; }
 
 // name your "data" argument:
-iffy.fn("f(d) d.bar + 1")
+iffy.fn("f(d) d.bar + 1") // returns
 function(d) { return d.bar + 1; }
   
 // create a function that maps properties:
-iffy.fn("f(d) {bar: d.baz}")
+iffy.fn("f(d) {bar: d.baz}") // returns
 function(d) { return {bar: d.baz}; }
 ```
 
@@ -33,13 +33,13 @@ alert(test({foo: 2}));
 ### Node.js
 In node, just install with npm:
 
-```
+```sh
 $ npm install iffy
 ```
 
 Then require it:
 
-```
+```js
 var iffy = require("iffy"),
     test = iffy.fn("foo > 1");
 
@@ -56,14 +56,14 @@ Iffy has some quirks. If you provide an argument name in any of the following fo
 
 Then the `<body>` portion of the function will simply be wrapped in curly braces and prepended with a `return` statement. In this form, you *must* prepend all of your property references with the name of your argument, e.g.:
 
-```
+```js
 iffy.fn("f(d) d.foo") // works
 iffy.fn("f(d) foo") // will produce an error: 'foo is undefined'
 ```
 
 However, if you don't provide an argument name, iffy will make one up (`d`) and rewrite your function body by prepending what it thinks are object properties with `d.`, e.g.:
 
-```
+```js
 iffy.fn("foo") // returns:
 function(d) { return d.foo; }
 
