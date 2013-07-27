@@ -1,5 +1,5 @@
 # iffy
-Iffy is a shorthand function generator for JavaScript. It's useful for defining simple
+Iffy is a shorthand function generator for JavaScript.
 
 ## Usage
 Iffy generates usable functions from more readable, shorthand strings, like:
