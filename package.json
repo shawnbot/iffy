@@ -1,7 +1,7 @@
 {
   "name": "iffy",
   "preferGlobal": true,
-  "version": "0.0.2",
+  "version": "0.1.0",
   "author": "Shawn Allen <shawn@stamen.com>",
   "description": "Shorthand function generators for JavaScript",
   "contributors": [],

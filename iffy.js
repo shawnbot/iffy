@@ -1,6 +1,6 @@
 (function(iffy) {
 
-  iffy.version = "0.0.2";
+  iffy.version = "0.1.0";
 
   iffy.fn = function(fn) {
     if (typeof fn === "function") return fn;
