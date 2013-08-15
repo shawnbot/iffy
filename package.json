@@ -4,11 +4,9 @@
   "version": "0.0.2",
   "author": "Shawn Allen <shawn@stamen.com>",
   "description": "Shorthand function generators for JavaScript",
-  "contributors": [
-  ],
+  "contributors": [],
   "tags": "function shorthand parser",
-  "bin": {
-  },
+  "bin": {},
   "main": "./status",
   "repository": {
     "type": "git",
@@ -16,8 +14,9 @@
   },
   "dependencies": {
     "event-stream": "*",
-    "optimist":     "*",
-    "d3":           ">=3.1"
+    "optimist": "*",
+    "d3": ">=3.1",
+    "contextify": "~0.1.6"
   },
   "license": "MIT",
   "engines": {
