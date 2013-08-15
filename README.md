@@ -75,3 +75,21 @@ function(d) { return parseFloat(d.baz); }
 ```
 
 Iffy assumes any string of word characters (`/(\w+)/`) *not preceded by a dot* `.` *or followed by a parenthesis* `(` to be an object property. This covers most cases, but if you want to be sure that your function does the right thing, just provide the argument name using one of the forms above.
+
+## Expressions (experimental)
+Iffy expressions are JavaScript expressions that execute in the "context" of
+your data. E.g.
+
+```js
+var male = iffy.expr("gender == 'm'");
+male({gender: 'm'}); // true
+male({gender: 'f'}); // false
+
+var initials = iffy.expr("[first[0], last[0]].join('')");
+initials({first: "Shawn", last: "Allen"}); // "SA"
+```
+
+So, expressions take a string expression and return a function that takes an
+object, and returns the evaluated expression with *as though each key of that
+object was a local variable.* This is modeled on the behavior of
+[organ](https://github.com/shawnbot/py-organ/)'s `organ.expression()` function.
