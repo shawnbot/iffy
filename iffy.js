@@ -1,6 +1,5 @@
-(function(exports) {
+(function(iffy) {
 
-  var iffy = exports;
   iffy.version = "0.0.2";
 
   iffy.fn = function(fn) {
@@ -23,5 +22,24 @@
       throw "Parse error";
     }
   };
+
+  if (typeof module !== "undefined") {
+    var Contextify = require("Contextify");
+
+    iffy.expr = function(expr, globals) {
+      return function(d) {
+        var context = {
+          d: d,
+          arguments: arguments
+        };
+        for (var key in d) {
+          if (key.match(/^\w+$/)) {
+            context[key] = d[key];
+          }
+        }
+        return Contextify(d).run(expr);
+      };
+    };
+  }
 
 })(typeof module === "undefined" ? this.iffy = {} : module.exports);
